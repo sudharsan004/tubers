@@ -20,5 +20,10 @@ class TeamMember(models.Model):
     role = models.CharField(max_length=250, blank=True)
     facebook_link = models.URLField(max_length=250, blank=True)
     linkedIn_link = models.URLField(max_length=250, blank=True)
+    youtube_link = models.URLField(
+        max_length=250, blank=True, default='http://youtube.com')
     image = models.ImageField(upload_to='media/team/', blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name

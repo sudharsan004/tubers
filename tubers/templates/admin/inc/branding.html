@@ -1,12 +1,13 @@
 {% load admin_style_tags i18n %}
 {% load static from static %}
-<div id="header-logo">
-    <a class="icon-logo" href="/"><span>django CMS</span></a>
-</div>
+<!-- <div id="header-logo">
+    <a class="icon-logo" href="/"><span>CMS</span></a>
+</div> -->
 <h1>{{ site_header|default:_('Django Administration') }}</h1>
 <ul id="site-name" class="toolbar-item toolbar-item-navigation">
     <li>
-        <a class="menu-item" href="">{{ site_header|default:_('Django Administration') }} V</a>
+        <!-- <a class="menu-item" href="">{{ site_header|default:_('Django Administration') }} V</a> -->
+        <a class="menu-item" href="">Logout / Change Password</a>
         <ul class="submenu">
             {% if user.is_active and user.is_staff %}
             {% url 'django-admindocs-docroot' as docsroot %}
