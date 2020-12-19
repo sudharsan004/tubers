@@ -7,9 +7,11 @@ from youtubers.models import Ytuber
 def home(request):
     sliders = Slider.objects.all()
     team_members = TeamMember.objects.all()
-    ytubers = Ytuber.objects.order_by('-created_at').filter(is_featured=True)
+    featured_ytubers = Ytuber.objects.order_by(
+        '-created_at').filter(is_featured=True)
+    ytubers = Ytuber.objects.order_by('-created_at')
     context = {'sliders': sliders,
-               'team_members': team_members, 'featured_ytubers': ytubers}
+               'team_members': team_members, 'ytubers': ytubers, 'featured_ytubers': featured_ytubers}
     return render(request, 'webpages/home.html', context)
 
 

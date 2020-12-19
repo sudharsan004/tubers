@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.youtubers, name='youtubers'),
-    path('<int:id>/', views.youtubers_detail, name='youtubers_detail'),
+    path('<int:id>/', views.youtubers_detail, name='youtuber_detail'),
     path('search/', views.youtubers, name='youtubers_search'),
 ]

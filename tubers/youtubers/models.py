@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from django.core.exceptions import ValidationError
+from urllib.parse import urlparse
 # Create your models here.
 
 
@@ -44,6 +45,19 @@ class Ytuber(models.Model):
     image_url = models.URLField(
         verbose_name='Dp URL', blank=True)
     display_vedio_link = models.URLField(null=True)
+
+    def video_id(self):
+        query = urlparse(self.display_vedio_link)
+        if query.hostname == 'youtu.be':
+            return query.path[1:]
+        if query.hostname in ('www.youtube.com', 'youtube.com'):
+            if query.path == '/watch':
+                p = parse_qs(query.query)
+                return p['v'][0]
+            if query.path[:7] == '/embed/':
+                return query.path.split('/')[2]
+            if query.path[:3] == '/v/':
+                return query.path.split('/')[2]
     description = RichTextField()
     is_featured = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
