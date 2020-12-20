@@ -1,7 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from django.core.exceptions import ValidationError
-from urllib.parse import urlparse
+from urllib.parse import urlparse, parse_qs
 # Create your models here.
 
 
@@ -65,8 +65,3 @@ class Ytuber(models.Model):
 
     def __str__(self):
         return self.name
-
-    def clean(self):
-        super(Ytuber, self).clean()
-        if self.image is None and self.image_url is None:
-            raise ValidationError('Validation error text')

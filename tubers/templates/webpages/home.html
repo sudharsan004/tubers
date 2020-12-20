@@ -92,7 +92,11 @@
                     </span>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{youtuber.name}}</h5>
+                    <a href="{% url 'youtuber_detail' youtuber.id %}">
+                        <h5 class="btn text-md font-weight-bolder" onclick="">
+                            {{youtuber.name|title}}
+                        </h5>
+                    </a>
                     <p class="card-text">{{youtuber.categorey}}</p>
                     <div class="person-description mt-2">
                         <button class="btn btn-accent"> City: {{youtuber.city}}</button>
@@ -143,7 +147,11 @@
 
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">{{youtuber.name}}</h5>
+                    <a href="{% url 'youtuber_detail' youtuber.id %}">
+                        <h5 class="btn text-md font-weight-bolder" onclick="">
+                            {{youtuber.name|title}}
+                        </h5>
+                    </a>
                     <p class="card-text">{{youtuber.categorey}}</p>
                     <div class="person-description mt-2">
                         <button class="btn btn-accent"> City: {{youtuber.city}}</button>

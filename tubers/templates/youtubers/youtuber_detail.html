@@ -14,20 +14,24 @@
     <section class="head container mt-5 mb-5">
         <div class="row">
             <div class="col-md-4 d-flex justify-content-center align-items-center">
-                <h1 class="text-center">{{youtuber.name|title}}</h1>
+                <a href="{{youtuber.youtube_channel_link}}">
+                    <h1 class="text-center"><u>{{youtuber.youtube_channel_name|title}} </u></h1>
+                </a>
             </div>
             <div class="col-md-4 d-flex justify-content-center align-items-center">
-                <h1 class="text-accent text-center">
+                <h2 class="text-accent text-center">
                     $ {{youtuber.price}}
-                </h1>
+                </h2>
             </div>
             <div class="col-md-4 d-flex justify-content-center align-items-center">
                 <img src="{{youtuber.image_url}}" class="img-fluid" alt="team-member">
+                <h5 class="text-center" style="position: absolute; top: 150px;">{{youtuber.name|title}}</h5>
             </div>
+
         </div>
     </section>
     <section class="video container text-center">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/{{youtuber.video_id}}" frameborder="0"
+        <iframe width="100%" height="400" src="https://www.youtube.com/embed/{{youtuber.video_id}}" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         <!-- <img src="https://placeimg.com/640/480/arch" class="img-fluid" alt="team-member"> -->
@@ -50,7 +54,7 @@
         <div class="person-description mt-2">
             <button class="btn btn-accent">Team: {{youtuber.team_type}} </button>
             <button class="btn btn-accent"> Cam: {{youtuber.camera_type}} </button>
-            <button class="btn btn-accent"> Subs: {{youtube.subscriber_count}} </button>
+            <button class="btn btn-accent"> Subs: {{youtuber.subscriber_count}} </button>
         </div>
 
     </section>
