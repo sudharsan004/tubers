@@ -13,6 +13,10 @@ djangocms-admin-style = "*"
 django-ckeditor = "*"
 django-allauth = "*"
 autopep8 = "*"
+django-filter = "*"
+gunicorn = "*"
+django-storages = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.8"
