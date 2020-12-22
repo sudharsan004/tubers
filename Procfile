@@ -1,1 +1,1 @@
-web: gunicorn tubers.wsgi
+web: gunicorn tubers/tubers.wsgi
