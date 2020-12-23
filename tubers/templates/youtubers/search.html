@@ -5,7 +5,12 @@
 <main class="searchpage">
 
     <h1 class="text-center" style="">
-        Search Result for {{keyword}}
+        {% if keyword  %}
+        Search Results for {{keyword}}
+        {% else %}
+        Search Result
+        {% endif %}
+
     </h1>
 
     <section class="searchbox container mt-5 p-3 bg-accent">
@@ -15,31 +20,34 @@
                 <div class="form-group col-md-4">
                     <select name='city' id="inputState" class="form-control">
                         <option selected disabled hidden>City</option>
-                        <option>...</option>
+                        {% for city in city_values %}
+                        <option value="{{city}}">{{city}}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="form-group col-md-4">
-                    <select id="inputState" class="form-control">
+                    <select name='camera_type' id="inputState" class="form-control">
                         <option selected disabled hidden>Camera Type</option>
-                        <option>Value 1</option>
-                        <option>Value 2</option>
-                        <option>Value 3</option>
-                        <option>Value 4</option>
+                        {% for camera in camera_values %}
+                        <option value="{{camera}}">{{camera}}</option>
+                        {% endfor %}
                     </select>
                 </div>
                 <div class="form-group col-md-4">
-                    <select class="form-control">
+                    <select name='categorey' class="form-control">
                         <option selected disabled hidden>Category</option>
-                        <option>...</option>
+                        {% for category in categorey_values %}
+                        <option value="{{category}}">{{category}}</option>
+                        {% endfor %}
                     </select>
                 </div>
             </div>
+            <div class="text-center">
 
+                <button type="submit" class="btn btn-light">Search</button>
+            </div>
         </form>
-        <div class="text-center">
 
-            <button class="btn btn-light">Search</button>
-        </div>
     </section>
 
 
