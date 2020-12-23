@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'user_accounts',
     'webpages',
     'youtubers',
     'djangocms_admin_style',
