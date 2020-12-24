@@ -7,5 +7,5 @@ urlpatterns = [
     # Django already has a build in logout method so give some other name to logout function
     path('logout/', views.logout_user, name='logout'),
     path('register/', views.register, name='register'),
-    path('dashboard/', views.login, name='dashboard'),
+    path('dashboard/', views.dashboard, name='dashboard'),
 ]
