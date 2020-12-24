@@ -1,5 +1,5 @@
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from django.contrib.auth import logout
 # Create your views here.
 
 
@@ -9,7 +9,8 @@ def login(request):
 
 # Django already has a build in logout method so give some other name to logout function
 def logout_user(request):
-    return render(request, 'webpages/home.html')
+    logout(request)
+    return redirect('home')
 
 
 def register(request):
