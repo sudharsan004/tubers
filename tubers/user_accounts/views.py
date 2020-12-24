@@ -4,17 +4,17 @@ from django.shortcuts import render
 
 
 def login(request):
-    pass
+    return render(request, 'user_accounts/login.html')
 
 
 # Django already has a build in logout method so give some other name to logout function
 def logout_user(request):
-    pass
+    return render(request, 'webpages/home.html')
 
 
 def register(request):
-    pass
+    return render(request, 'user_accounts/register.html')
 
 
 def dashboard(request):
-    pass
+    return render(request, 'user_accounts/dashboard.html')
