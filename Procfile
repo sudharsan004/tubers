@@ -1,0 +1,1 @@
+web: sh -c 'cd ./tubers/ && exec gunicorn tubers.wsgi --log-file -'
