@@ -17,6 +17,7 @@ django-filter = "*"
 gunicorn = "*"
 django-storages = "*"
 whitenoise = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.8"
