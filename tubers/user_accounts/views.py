@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth import logout
 from django.contrib import messages, auth
@@ -58,5 +59,6 @@ def logout_user(request):
     return redirect('home')
 
 
+@login_required(login_url='login')
 def dashboard(request):
     return render(request, 'user_accounts/dashboard.html')
