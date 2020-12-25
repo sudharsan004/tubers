@@ -14,11 +14,23 @@ def register(request):
         password = request.POST['password']
         confirm_password = request.POST['confirm_password']
 
-        user = User.objects.create_user(first_name=first_name, last_name=last_name, username=user_name,
-                                        email=email, password=password)
-        user.save()
-        messages.success(request, 'Account created')
-        return redirect('login')
+        # Validation
+        if (User.objects.filter(username=user_name).exists() or User.objects.filter(email=email).exists()):
+            messages.warning(
+                request, 'A user with User-name / Email already exists.')
+            return redirect('register')
+        else:
+            if(password != confirm_password):
+                messages.warning(request, 'Passwords do not match.')
+                return redirect('register')
+            elif (len(password) >= 6):
+                messages.warning(
+                    request, 'Password must be atleast 6 characters')
+                user = User.objects.create_user(first_name=first_name, last_name=last_name, username=user_name,
+                                                email=email, password=password)
+                user.save()
+                messages.success(request, 'Account created')
+                return redirect('login')
     return render(request, 'user_accounts/register.html')
 
 
