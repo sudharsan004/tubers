@@ -16,11 +16,13 @@ def home(request):
 
 
 def services(request):
-    return render(request, 'webpages/dashboard.html')
+    return render(request, 'webpages/services.html')
 
 
 def about(request):
-    return render(request, 'webpages/about.html')
+    team_members = TeamMember.objects.all()
+    data = {'team_members': team_members}
+    return render(request, 'webpages/about.html', data)
 
 
 def contact(request):
