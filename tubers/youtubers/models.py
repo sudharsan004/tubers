@@ -2,6 +2,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from django.core.exceptions import ValidationError
 from urllib.parse import urlparse, parse_qs
+from phonenumber_field.modelfields import PhoneNumberField
 # Create your models here.
 
 
@@ -68,4 +69,13 @@ class Ytuber(models.Model):
         return self.name
 
 
-# class ContactTuber(models.Model):
+class ContactTuber(models.Model):
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    email = models.EmailField()
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=100)
+    phone = models.PhoneNumberField()
+    subject = models.CharField(max_length=200)
+    message = models.CharField(max_length=400)
+    contacted_ytuber = models.ForeignKey(Ytuber, on_delete=models.CASCADE)

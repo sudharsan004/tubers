@@ -73,6 +73,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'whitenoise.runserver_nostatic',
+    'phonenumber_field',
     # for django-allauth
     'django.contrib.sites',
     'allauth',

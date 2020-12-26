@@ -18,6 +18,7 @@ gunicorn = "*"
 django-storages = "*"
 whitenoise = "*"
 dj-database-url = "*"
+django-phonenumber-field = "*"
 
 [requires]
 python_version = "3.8"
