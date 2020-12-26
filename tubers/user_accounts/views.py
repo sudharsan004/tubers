@@ -24,7 +24,7 @@ def register(request):
             if(password != confirm_password):
                 messages.warning(request, 'Passwords do not match.')
                 return redirect('register')
-            elif (len(password) >= 6):
+            elif (len(password) < 6):
                 messages.warning(
                     request, 'Password must be atleast 6 characters')
                 user = User.objects.create_user(first_name=first_name, last_name=last_name, username=user_name,
@@ -47,7 +47,7 @@ def login(request):
             messages.success(request, 'Login Success')
             return redirect('dashboard')
         else:
-            messages.error(request, 'Worng User Name/Password')
+            messages.error(request, 'Wrong User Name/Password ')
             return redirect('login')
 
     return render(request, 'user_accounts/login.html')
@@ -56,6 +56,7 @@ def login(request):
 # Django already has a build in logout method so give some other name to logout function
 def logout_user(request):
     logout(request)
+    messages.info(request, 'Successfully Logged out!')
     return redirect('home')
 
 
