@@ -30,7 +30,34 @@ DEBUG = True
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost',
                  '127.0.0.1', 'hiretuber.herokuapp.com']
 
+# Setup for django-allauth
+LOGIN_REDIRECT_URL = 'dashboard'
 
+SOCIALACCOUNT_PROVIDERS = {
+    'facebook': {
+        'METHOD': 'oauth2',
+        'SDK_URL': '//connect.facebook.net/{locale}/sdk.js',
+        'SCOPE': ['email', 'public_profile'],
+        'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+        'INIT_PARAMS': {'cookie': True},
+        'FIELDS': [
+            'id',
+            'first_name',
+            'last_name',
+            'middle_name',
+            'name',
+            'name_format',
+            'picture',
+            'short_name'
+        ],
+        'EXCHANGE_TOKEN': True,
+        'LOCALE_FUNC': 'path.to.callable',
+        'VERIFIED_EMAIL': False,
+        'VERSION': 'v7.0',
+    }
+}
+
+SITE_ID = 3
 # Application definition
 
 INSTALLED_APPS = [
@@ -46,7 +73,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'whitenoise.runserver_nostatic',
+    # for django-allauth
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
