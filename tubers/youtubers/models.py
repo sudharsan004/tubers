@@ -31,6 +31,7 @@ class Ytuber(models.Model):
     )
 
     name = models.CharField(max_length=200)
+    email = models.EmailField(default='8921test@gmail.com')
     city = models.CharField(max_length=200)
     age = models.IntegerField()
     youtube_channel_name = models.CharField(max_length=150)
@@ -65,3 +66,6 @@ class Ytuber(models.Model):
 
     def __str__(self):
         return self.name
+
+
+# class ContactTuber(models.Model):
