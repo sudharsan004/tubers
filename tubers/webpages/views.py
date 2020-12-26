@@ -20,8 +20,8 @@ def services(request):
 
 
 def about(request):
-    return render(request, 'admin/base_site.html')
+    return render(request, 'webpages/about.html')
 
 
 def contact(request):
-    return render(request, 'admin/base_site.html')
+    return render(request, 'webpages/contact.html')
