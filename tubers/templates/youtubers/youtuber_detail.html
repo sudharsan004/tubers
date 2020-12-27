@@ -13,6 +13,9 @@
 
     <section class="head container mt-5 mb-5">
         <div class="row">
+            {% include 'message.html' %}
+        </div>
+        <div class="row">
             <div class="col-md-4 d-flex justify-content-center align-items-center">
                 <a href="{{youtuber.youtube_channel_link}}">
                     <h1 class="text-center"><u>{{youtuber.youtube_channel_name|title}} </u></h1>
@@ -61,9 +64,9 @@
 
     <section class="youtuber-form container mt-5 mb-5">
         <div class="row">
-            <form class="col-md-8 offset-md-2" method="POST" action="{% url 'youtuber_detail' %}">
+            <form class="col-md-8 offset-md-2" method="POST" action="{% url 'youtuber_contact' youtuber.id %}">
+                {% csrf_token %}
                 <h3 class="pt-2 pb-2">Fill the Form to reach out {{youtuber.name|title}}</h3>
-
                 <div class="form-row">
                     <div class="form-group col-md-4">
                         <input name='first_name' class="form-control" placeholder="First Name">

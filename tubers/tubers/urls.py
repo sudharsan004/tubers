@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include('webpages.urls')),
     path('user/', include('user_accounts.urls')),
     path('youtubers/', include('youtubers.urls')),
+    path('contact-tuber/', include('contact_tuber.urls')),
     # django-allauth url
     path('socialaccounts/', include('allauth.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
