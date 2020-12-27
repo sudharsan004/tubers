@@ -61,7 +61,7 @@
 
     <section class="youtuber-form container mt-5 mb-5">
         <div class="row">
-            <form class="col-md-8 offset-md-2">
+            <form class="col-md-8 offset-md-2" method="POST" action="{% url 'youtuber_detail' %}">
                 <h3 class="pt-2 pb-2">Fill the Form to reach out {{youtuber.name|title}}</h3>
 
                 <div class="form-row">

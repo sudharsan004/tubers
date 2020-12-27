@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Ytuber
+from .models import *
 from django.utils.html import format_html
 # Register your models here.
 

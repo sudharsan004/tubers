@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'user_accounts',
     'webpages',
     'youtubers',
+    'contact_tuber',
     'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',

@@ -75,7 +75,7 @@ class ContactTuber(models.Model):
     email = models.EmailField()
     city = models.CharField(max_length=100)
     state = models.CharField(max_length=100)
-    phone = models.PhoneNumberField()
+    phone = PhoneNumberField()
     subject = models.CharField(max_length=200)
     message = models.CharField(max_length=400)
     contacted_ytuber = models.ForeignKey(Ytuber, on_delete=models.CASCADE)
