@@ -23,6 +23,7 @@ class TeamMember(models.Model):
     youtube_link = models.URLField(
         max_length=250, blank=True, default='http://youtube.com')
     image = models.ImageField(upload_to='media/team/', blank=True)
+    image_url = models.URLField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

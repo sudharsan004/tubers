@@ -188,7 +188,8 @@
             <!-- team Members -->
             {% for member in team_members %}
             <div class="card border-0 text-center  ml-3 mr-3">
-                <img src="{{member.image.url}}" class="card-img-top" alt="team-member">
+                <img src="{{member.image_url}}" height="300px" style="object-fit: cover;" class="card-img-top"
+                    alt="team-member">
                 <div class="card-body">
                     <h5 class="card-title">{{member.name}}</h5>
                     <p class="card-text">{{member.role}}</p>
