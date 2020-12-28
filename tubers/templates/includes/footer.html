@@ -10,9 +10,9 @@
                 </div>
 
                 <div class="col-sm-6 text-lg-right text-center">
-                    <button class="btn btn-light">
+                    <a class="btn btn-light" href="{% url 'contact' %}">
                         Contact Us
-                    </button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-4 text-lg-left text-center">
                 <h5>
-                    2020 YTubers for Hire
+                    2020 HireTuber
                 </h5>
             </div>
             <div class="col-md-4 text-lg-center text-center">
@@ -32,10 +32,18 @@
             <div class="col-md-4 text-lg-right text-center">
                 <div>
 
-                    <button class="btn btn-accent"> <i class="fab fa-facebook-f fa-lg	"></i> </button>
-                    <button class="btn btn-accent"> <i class="fab fa-instagram fa-lg	"></i> </button>
-                    <button class="btn btn-accent"> <i class="fab fa-twitter fa-lg	"></i> </button>
-                    <button class="btn btn-accent"> <i class="fab fa-youtube fa-lg	"></i> </button>
+                    <a href="{{contact_info.facebook_link}}" class="btn btn-accent"> <i
+                            class="fab fa-facebook-f fa-lg	"></i>
+                    </a>
+                    <a href="{{contact_info.instagram_link}}" class="btn btn-accent"> <i
+                            class="fab fa-instagram fa-lg	"></i>
+                    </a>
+                    <a href="{{contact_info.twitter_link}}" class="btn btn-accent"> <i
+                            class="fab fa-twitter fa-lg	"></i>
+                    </a>
+                    <a href="{{contact_info.youtube_link}}" class="btn btn-accent"> <i
+                            class="fab fa-youtube fa-lg	"></i>
+                    </a>
 
                 </div>
             </div>
