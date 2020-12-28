@@ -30,7 +30,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['0.0.0.0', 'localhost',
                  '127.0.0.1', 'hiretuber.herokuapp.com']
 
-# Setup for django-allauth
+# Setup for django - allauth
 LOGIN_REDIRECT_URL = 'dashboard'
 
 SOCIALACCOUNT_PROVIDERS = {
