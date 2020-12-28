@@ -65,6 +65,7 @@ INSTALLED_APPS = [
     'webpages',
     'youtubers',
     'contact_tuber',
+    'contact_info',
     'djangocms_admin_style',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -110,6 +111,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'contact_info.context_processor.contact'
             ],
         },
     },
