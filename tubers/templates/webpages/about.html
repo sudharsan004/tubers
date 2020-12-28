@@ -11,57 +11,33 @@
         </h1>
     </div>
     <section class="container mt-5 mb-5">
-        <div class="row mt-5">
-            <div class="col-md-4">
-                <img src="https://placeimg.com/640/480/any" alt="" class="img-fluid">
-            </div>
-            <div class="col-md-8 animate__animated animate__fadeInRight">
-                <h2 class="text-center">About Project</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aut, itaque quos est
-                    recusandae
-                    earum fugiat numquam hic quasi dignissimos vitae mollitia aperiam tempore cum doloremque et
-                    accusamus
-                    praesentium dolores.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam debitis rerum doloribus repellat
-                    nulla
-                    soluta, est aut ipsa exercitationem quo asperiores atque vel voluptate, facilis voluptas dolores, id
-                    sunt
-                    eaque deserunt sapiente eveniet. Ad reprehenderit temporibus distinctio, deserunt quibusdam
-                    accusamus soluta
-                    eum animi quaerat voluptates rem quia, pariatur voluptatem magnam enim ratione aliquid! Aperiam,
-                    autem at.
-                    tempora quam facilis deleniti explicabo labore, accusantium provident quidem omnis tenetur incidunt
-                    esse
-                    quos nisi.
-                </p>
-            </div>
-        </div>
+        {% for event in about_event %}
+        {% if event.id|divisibleby:"2" %}
         <div class="row mt-5">
 
             <div class="col-md-8  animate__animated animate__fadeInLeft  animate__delay-1s">
-                <h2 class="text-center">About Project</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus aut, itaque quos est
-                    recusandae
-                    earum fugiat numquam hic quasi dignissimos vitae mollitia aperiam tempore cum doloremque et
-                    accusamus
-                    praesentium dolores.
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam debitis rerum doloribus repellat
-                    nulla
-                    soluta, est aut ipsa exercitationem quo asperiores atque vel voluptate, facilis voluptas dolores, id
-                    sunt
-                    eaque deserunt sapiente eveniet. Ad reprehenderit temporibus distinctio, deserunt quibusdam
-                    accusamus soluta
-                    eum animi quaerat voluptates rem quia, pariatur voluptatem magnam enim ratione aliquid! Aperiam,
-                    autem at.
-                    tempora quam facilis deleniti explicabo labore, accusantium provident quidem omnis tenetur incidunt
-                    esse
-                    quos nisi.
-                </p>
+                <h2 class="text-center">{{event.title}}</h2>
+                <p>{{event.description|safe}}</p>
             </div>
             <div class="col-md-4">
-                <img src="https://placeimg.com/640/480/any" alt="" class="img-fluid">
+                <img src="{{event.image_url}}" alt="" class="img-fluid">
             </div>
         </div>
+        {% else %}
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <img src="{{event.image_url}}" alt="" class="img-fluid">
+            </div>
+            <div class="col-md-8 animate__animated animate__fadeInRight">
+                <h2 class="text-center">{{event.title}}</h2>
+                <p>{{event.description|safe}}
+                </p>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+
+
     </section>
 
     <section class="container mt-3">

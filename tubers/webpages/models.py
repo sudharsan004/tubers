@@ -1,5 +1,5 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 
@@ -39,3 +39,12 @@ class ContactModel(models.Model):
 
     def __str__(self):
         return self.full_name
+
+
+class AboutModel(models.Model):
+    title = models.CharField(max_length=200, blank=True)
+    image_url = models.URLField()
+    description = RichTextField()
+
+    def __str__(self):
+        return self.title

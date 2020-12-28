@@ -22,8 +22,9 @@ def services(request):
 
 
 def about(request):
+    about_event = AboutModel.objects.all()
     team_members = TeamMember.objects.all()
-    data = {'team_members': team_members}
+    data = {'team_members': team_members, 'about_event': about_event}
     return render(request, 'webpages/about.html', data)
 
 
