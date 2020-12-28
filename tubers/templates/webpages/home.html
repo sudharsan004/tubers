@@ -84,11 +84,13 @@
             <!-- person 1 -->
             <div class="card border-0 text-center ml-3 mr-3">
                 <div class="feature-text">
-                    {% if youtuber.image  %}
-                    <img src="{{youtuber.image.url}}" class="card-img-top" alt="team-member">
-                    {% else %}
-                    <img src="{{youtuber.image_url}}" class="card-img-top" alt="team-member">
-                    {% endif %}
+                    <a href="{% url 'youtuber_detail' youtuber.id %} ">
+                        {% if youtuber.image  %}
+                        <img src="{{youtuber.image.url}}" class="card-img-top" alt="team-member">
+                        {% else %}
+                        <img src="{{youtuber.image_url}}" class="card-img-top" alt="team-member">
+                        {% endif %}
+                    </a>
                     <span class="text-left bg-accent font-weight-bold">
                         Featured
                     </span>
@@ -141,12 +143,13 @@
             <!-- person 1 -->
             <div class="card border-0 text-center">
                 <div>
-                    {% if youtuber.image  %}
-                    <img src="{{youtuber.image.url}}" class="card-img-top" alt="team-member">
-                    {% else %}
-                    <img src="{{youtuber.image_url}}" width="322px" class="card-img-top" alt="team-member">
-                    {% endif %}
-
+                    <a href="{% url 'youtuber_detail' youtuber.id %}">
+                        {% if youtuber.image  %}
+                        <img src="{{youtuber.image.url}}" class="card-img-top" alt="team-member">
+                        {% else %}
+                        <img src="{{youtuber.image_url}}" width="322px" class="card-img-top" alt="team-member">
+                        {% endif %}
+                    </a>
                 </div>
                 <div class="card-body">
                     <a href="{% url 'youtuber_detail' youtuber.id %}">
