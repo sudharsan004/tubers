@@ -27,6 +27,8 @@ def register(request):
             elif (len(password) < 6):
                 messages.warning(
                     request, 'Password must be atleast 6 characters')
+                return redirect('register')
+            else:
                 user = User.objects.create_user(first_name=first_name, last_name=last_name, username=user_name,
                                                 email=email, password=password)
                 user.save()

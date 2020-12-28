@@ -119,18 +119,18 @@
                 <h3 class="pt-2 pb-2">Fill the Form to reach out {{youtuber.name|title}}</h3>
                 <div class=" form-row">
                     <div class="form-group col-md-4">
-                        <input name='first_name' class="form-control" placeholder="First Name *">
+                        <input name='first_name' class="form-control" placeholder="First Name *" required>
                     </div>
                     <div class="form-group col-md-4">
-                        <input name='last_name' class="form-control" placeholder="Last Name *">
+                        <input name='last_name' class="form-control" placeholder="Last Name *" required>
                     </div>
                     <div class="form-group col-md-4">
-                        <input type="email" name='email' class="form-control" placeholder="Email *">
+                        <input type="email" name='email' class="form-control" placeholder="Email *" required>
                     </div>
                 </div>
 
                 <div class="form-group">
-                    <input class="form-control" name="subject" placeholder="Subject... *">
+                    <input class="form-control" name="subject" placeholder="Subject... *" required>
                 </div>
 
                 <div class="form-row">
@@ -147,7 +147,8 @@
                 </div>
 
                 <div class="form-group pt-2">
-                    <textarea class="form-control" name="message" rows="3" placeholder="Details Message *"></textarea>
+                    <textarea class="form-control" name="message" rows="3" placeholder="Details Message *"
+                        required></textarea>
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-accent">Submit</button>
