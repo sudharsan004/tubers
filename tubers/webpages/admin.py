@@ -25,3 +25,4 @@ class SliderAdmin(admin.ModelAdmin):
 
 admin.site.register(models.Slider, SliderAdmin)
 admin.site.register(models.TeamMember, TeamAdmin)
+admin.site.register(models.ContactModel)

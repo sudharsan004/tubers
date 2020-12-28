@@ -27,3 +27,15 @@ class TeamMember(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ContactModel(models.Model):
+    full_name = models.CharField(max_length=220)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    company = models.CharField(max_length=120)
+    subject = models.CharField(max_length=200)
+    message = models.CharField(max_length=500)
+
+    def __str__(self):
+        return self.full_name

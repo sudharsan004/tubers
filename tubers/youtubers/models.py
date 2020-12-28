@@ -2,6 +2,7 @@ from django.db import models
 from ckeditor.fields import RichTextField
 from django.core.exceptions import ValidationError
 from urllib.parse import urlparse, parse_qs
+
 # Create your models here.
 
 
