@@ -19,6 +19,7 @@ django-storages = "*"
 whitenoise = "*"
 dj-database-url = "*"
 django-phonenumber-field = "*"
+phonenumbers = "*"
 
 [requires]
 python_version = "3.8"
