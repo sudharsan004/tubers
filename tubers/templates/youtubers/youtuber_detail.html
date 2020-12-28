@@ -62,12 +62,61 @@
 
     </section>
 
+    {% if user.is_authenticated  %}
     <section class="youtuber-form container mt-5 mb-5">
         <div class="row">
             <form class="col-md-8 offset-md-2" method="POST" action="{% url 'youtuber_contact' youtuber.id %}">
                 {% csrf_token %}
                 <h3 class="pt-2 pb-2">Fill the Form to reach out {{youtuber.name|title}}</h3>
                 <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <input name='first_name' value="{{user.first_name}}" class="form-control"
+                            placeholder="First Name">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input name='last_name' value="{{user.last_name}}" class="form-control" placeholder="Last Name">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="email" name='email' value="{{user.email}}" class="form-control"
+                            placeholder="Email">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" name="subject" placeholder="Subject...">
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <input type="text" name="city" class="form-control" placeholder="City">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="text" name="state" class="form-control" placeholder="State">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <input type="number" name="phone" class="form-control" placeholder="Phone Number">
+                    </div>
+
+                </div>
+
+                <div class="form-group pt-2">
+                    <textarea class="form-control" name="message" rows="3" placeholder="Details Message"></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-accent">Submit</button>
+                </div>
+
+            </form>
+        </div>
+
+    </section>
+    {% else %}
+    <section class="youtuber-form container mt-5 mb-5">
+        <div class="row">
+            <form class="col-md-8 offset-md-2" method="POST" action="{% url 'youtuber_contact' youtuber.id %}">
+                {% csrf_token %}
+                <h3 class="pt-2 pb-2">Fill the Form to reach out {{youtuber.name|title}}</h3>
+                <div class=" form-row">
                     <div class="form-group col-md-4">
                         <input name='first_name' class="form-control" placeholder="First Name">
                     </div>
@@ -107,6 +156,8 @@
         </div>
 
     </section>
+    {% endif %}
+
 
 </main>
 {% endblock %}

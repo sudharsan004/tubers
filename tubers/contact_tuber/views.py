@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from youtubers.models import Ytuber
 from django.core.mail import send_mail
+from contact_tuber.models import ContactInfo
 
 # Create your views here.
 
@@ -30,6 +31,10 @@ def contactTuber(request, id):
             fail_silently=False,
         )
 
+        # saving messages
+        new_msg = ContactInfo(first_name=first_name,
+                              last_name=last_name, email=email, city=city, state=state, phone=phone, subject=subject, message=message, ytuber_contacted=youtuber_contacted)
+        new_msg.save()
         messages.success(
             request, f'{first_name} Your Message Sent! {youtuber_contacted.name} will respond Asap!')
         return redirect('youtuber_detail', id=id)

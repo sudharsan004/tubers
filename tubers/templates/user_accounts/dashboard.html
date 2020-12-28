@@ -11,9 +11,12 @@
     </div>
 
     <section class="container mt-5">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">{%include 'message.html' %} </div>
+        </div>
         <h2 class="text-center">Welcome to Dashboard</h2>
         <h4 class="text-center text-white-50">
-            hi, First_name. Hope you are having a good day
+            hi, {{user.first_name}}. Hope you are having a good day
         </h4>
 
         <div class="table-responsive- mt-3">
