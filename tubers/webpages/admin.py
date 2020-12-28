@@ -15,5 +15,13 @@ class TeamAdmin(admin.ModelAdmin):
     search_fields = ('name',)
 
 
-admin.site.register(models.Slider)
+class SliderAdmin(admin.ModelAdmin):
+
+    def Photo(self, object):
+        return format_html(f'<img width="30"  src={object.image.url}/>')
+
+    list_display = ('title', 'Photo', 'button_text')
+
+
+admin.site.register(models.Slider, SliderAdmin)
 admin.site.register(models.TeamMember, TeamAdmin)
