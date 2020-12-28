@@ -38,7 +38,7 @@ def contact(request):
         send_mail(
             'YTubers Services',
             f'''Hi, {full_name} !
-            We have received Your message regarding {subject}, Our representative will respond Asap.
+            We have received Your message regarding {subject}, Our representative will call you Asap.
             Have a nice day !
             ''',
             '8921test@gmail.com',
