@@ -9,6 +9,7 @@ class Slider(models.Model):
     button_text = models.CharField(max_length=100, blank=True)
     button_url = models.URLField(max_length=100, blank=True)
     image = models.ImageField(upload_to='media/slider/%Y')
+    image_url = models.URLField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):

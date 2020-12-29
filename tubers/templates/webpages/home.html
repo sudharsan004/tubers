@@ -6,7 +6,11 @@
     <div class="top" data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'>
         {% for slide in sliders %}
         <div class="top-banner">
+            {% if slide.image_url  %}
+            <img src="{{slide.image_url}}" alt="" class="img-fluid w-100">
+            {% else %}
             <img src="{{slide.image.url}}" alt="" class="img-fluid w-100">
+            {% endif %}
             <div class="top-container d-flex flex-column pl-5">
                 <h1>
                     {{slide.title}}
