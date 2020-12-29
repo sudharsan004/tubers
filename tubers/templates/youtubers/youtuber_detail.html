@@ -65,7 +65,7 @@
         <div class="row">
             <form class="col-md-8 offset-md-2" method="POST" action="{% url 'youtuber_contact' youtuber.id %}">
                 {% csrf_token %}
-                <input type="hidden" name="id" value="{{user.id}}">
+                <input type="hidden" name="user_id" value="{{user.id}}">
                 <h3 class="pt-2 pb-2">Fill the Form to reach out {{youtuber.name|title}}</h3>
                 <div class="form-row">
                     <div class="form-group col-md-4">

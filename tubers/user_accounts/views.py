@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import logout
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
+from contact_tuber.models import ContactInfo
 # Create your views here.
 
 
@@ -64,4 +65,9 @@ def logout_user(request):
 
 @login_required(login_url='login')
 def dashboard(request):
-    return render(request, 'user_accounts/dashboard.html')
+    userid = request.user.id
+    print(userid)
+    contacted_ytubers = ContactInfo.objects.filter(
+        user_id=6).values_list('ytuber_contacted', flat=True).distinct()
+    data = {'ytubers': contacted_ytubers}
+    return render(request, 'user_accounts/dashboard.html', data)

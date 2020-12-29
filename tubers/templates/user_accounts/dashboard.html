@@ -31,30 +31,16 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for tuber in ytubers %}
                     <tr>
                         <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
+                        <td>{{tuber.name}}</td>
+                        <td>{{tuber.city}}</td>
                         <td>
-                            <div class="btn btn-accent">Go to Page </div>
+                            <a href="{% url 'youtuber_detail' tuber.id %}" class="btn btn-accent">Go to Page </a>
                         </td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>
-                            <div class="btn btn-accent">Go to Page </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>
-                            <div class="btn btn-accent">Go to Page </div>
-                        </td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>

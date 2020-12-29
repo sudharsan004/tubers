@@ -18,7 +18,7 @@ def contactTuber(request, id):
         phone = request.POST['phone']
         message = request.POST['message']
         youtuber_contacted = Ytuber.objects.get(id=id)
-        user_id = request.POST['user_id']
+        user_id = request.POST.get('user_id', None)
 
         # Send mail
         send_mail(
