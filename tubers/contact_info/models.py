@@ -10,3 +10,6 @@ class ContactInfo(models.Model):
     twitter_link = models.URLField()
     instagram_link = models.URLField()
     youtube_link = models.URLField()
+
+    def __str__(self):
+        return 'Hiretuber Contact Info'

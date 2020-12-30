@@ -71,3 +71,17 @@ def dashboard(request):
         user_id=6).values_list('ytuber_contacted', flat=True).distinct()
     data = {'ytubers': contacted_ytubers}
     return render(request, 'user_accounts/dashboard.html', data)
+
+
+def create_new_user(request, un):
+    password = '123456'
+    if (User.objects.filter(username=un).exists()):
+        messages.success(
+            request, f'''Welcome {un}!''')
+        return redirect('home')
+    else:
+        user = User.objects.create_user(username=un, password=password)
+        user.save()
+        messages.success(
+            request, f'''Welcome {un}!, your username: "{un}"  password: "123456" ''')
+        return redirect('home')

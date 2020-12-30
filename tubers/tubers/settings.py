@@ -131,15 +131,15 @@ DATABASES = {
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'lcotubers',
-#         'USER': 'postgres',
-#         'PASSWORD': 'pass',
-#         'HOST': '127.0.0.1'
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'lcotubers',
+        'USER': 'postgres',
+        'PASSWORD': 'pass',
+        'HOST': '127.0.0.1'
+    }
+}
 
 
 # Password validation
