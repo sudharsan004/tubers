@@ -4,6 +4,7 @@ from django.contrib.auth import logout
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
 from contact_tuber.models import ContactInfo
+from youtubers.models import Ytuber
 # Create your views here.
 
 
@@ -67,8 +68,11 @@ def logout_user(request):
 def dashboard(request):
     userid = request.user.id
     print(userid)
-    contacted_ytubers = ContactInfo.objects.filter(
+    contacted_ytubers_id = ContactInfo.objects.filter(
         user_id=6).values_list('ytuber_contacted', flat=True).distinct()
+    contacted_ytubers = []
+    for value in contacted_ytubers_id:
+        contacted_ytubers.append(Ytuber.objects.get(id=value))
     data = {'ytubers': contacted_ytubers}
     return render(request, 'user_accounts/dashboard.html', data)
 

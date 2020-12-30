@@ -34,7 +34,7 @@ def contactTuber(request, id):
 
         # saving messages
         new_msg = ContactInfo(first_name=first_name,
-                              last_name=last_name, email=email, city=city, state=state, phone=phone, subject=subject, message=message, ytuber_contacted=youtuber_contacted)
+                              last_name=last_name, email=email, city=city, state=state, phone=phone, subject=subject, message=message, ytuber_contacted=youtuber_contacted, user_id=user_id)
         new_msg.save()
         messages.success(
             request, f'{first_name} Your Message Sent! {youtuber_contacted.name} will respond Asap!')
