@@ -18,7 +18,9 @@ def home(request):
 
 
 def services(request):
-    return render(request, 'webpages/services.html')
+    services = Services.objects.all()
+    data = {'services': services}
+    return render(request, 'webpages/services.html', data)
 
 
 def about(request):

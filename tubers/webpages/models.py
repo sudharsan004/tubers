@@ -55,3 +55,8 @@ class AboutModel(models.Model):
 class Services(models.Model):
     title = models.CharField(max_length=200, blank=True)
     description = RichTextField()
+
+    def __str__(self):
+        return self.title
+
+
